@@ -67,7 +67,6 @@ function Sidebar({
         </div>
 
         <div className="sidebar-section">
-          <h2 className="sidebar-section-title">Achievements</h2>
           <AchievementsForm
             achievements={achievements}
             setAchievements={setAchievements}

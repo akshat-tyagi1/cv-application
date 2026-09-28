@@ -157,15 +157,15 @@ function App() {
   const [achievements, setAchievements] = useState([
     {
       id: crypto.randomUUID(),
-      text: "Achievement 1",
+      text: "New Achievement",
     },
     {
       id: crypto.randomUUID(),
-      text: "Achievement 2",
+      text: "New Achievement",
     },
     {
       id: crypto.randomUUID(),
-      text: "Achievement 3",
+      text: "New Achievementc",
     },
   ]);
 
