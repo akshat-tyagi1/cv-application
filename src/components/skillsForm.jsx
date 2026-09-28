@@ -10,8 +10,9 @@ function SkillsForm({ skills, setSkills }) {
   };
 
   const deleteSkill = (skillId) => {
-    setSkills(skills.filter((skill) => skill.id != skillId));
+    setSkills(skills.filter((skill) => skill.id !== skillId));
   };
+  
   return (
     <>
       <div className="sidebar-section-header">

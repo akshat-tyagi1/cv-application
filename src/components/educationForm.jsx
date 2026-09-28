@@ -13,7 +13,7 @@ function EducationForm({ educations, setEducations }) {
 
   const deleteEducation = (educationId) => {
     setEducations(
-      educations.filter((education) => education.id != educationId),
+      educations.filter((education) => education.id !== educationId),
     );
   };
 
@@ -27,7 +27,7 @@ function EducationForm({ educations, setEducations }) {
       </div>
       <div>
         {educations.map(({ id, name, location, degree, years }) => (
-          <div key={id} className="form-entry">
+          <div key={id} className="form-education">
             <div className="form-field">
               <label htmlFor="">Institute Name</label>
               <input
@@ -35,10 +35,10 @@ function EducationForm({ educations, setEducations }) {
                 value={name}
                 onChange={(e) =>
                   setEducations(
-                    educations.map((entry) =>
-                      entry.id === id
-                        ? { ...entry, name: e.target.value }
-                        : entry,
+                    educations.map((education) =>
+                      education.id === id
+                        ? { ...education, name: e.target.value }
+                        : education,
                     ),
                   )
                 }
@@ -52,10 +52,10 @@ function EducationForm({ educations, setEducations }) {
                 value={location}
                 onChange={(e) =>
                   setEducations(
-                    educations.map((entry) =>
-                      entry.id === id
-                        ? { ...entry, location: e.target.value }
-                        : entry,
+                    educations.map((education) =>
+                      education.id === id
+                        ? { ...education, location: e.target.value }
+                        : education,
                     ),
                   )
                 }
@@ -69,10 +69,10 @@ function EducationForm({ educations, setEducations }) {
                 value={degree}
                 onChange={(e) =>
                   setEducations(
-                    educations.map((entry) =>
-                      entry.id === id
-                        ? { ...entry, degree: e.target.value }
-                        : entry,
+                    educations.map((education) =>
+                      education.id === id
+                        ? { ...education, degree: e.target.value }
+                        : education,
                     ),
                   )
                 }
@@ -86,10 +86,10 @@ function EducationForm({ educations, setEducations }) {
                 value={years}
                 onChange={(e) =>
                   setEducations(
-                    educations.map((entry) =>
-                      entry.id === id
-                        ? { ...entry, years: e.target.value }
-                        : entry,
+                    educations.map((education) =>
+                      education.id === id
+                        ? { ...education, years: e.target.value }
+                        : education,
                     ),
                   )
                 }
