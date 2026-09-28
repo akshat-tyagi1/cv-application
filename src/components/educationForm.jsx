@@ -1,78 +1,108 @@
-function EducationForm({ education, setEducation }) {
+function EducationForm({ educations, setEducations }) {
+  const addEducation = () => {
+    const newEducation = {
+      id: crypto.randomUUID(),
+      name: "University Name",
+      location: "City, City, Country",
+      degree: "Degree, e.g. B.Tech in Computer Scinece and Engineering",
+      years: "Start Year - End Year",
+    };
+
+    setEducations([...educations, newEducation]);
+  };
+
+  const deleteEducation = (educationId) => {
+    setEducations(
+      educations.filter((education) => education.id != educationId),
+    );
+  };
+
   return (
-    <div>
-      {education.map(({ id, name, location, degree, years }) => (
-        <div key={id} className="form-entry">
-          <div className="form-field">
-            <label htmlFor="">Institute Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) =>
-                setEducation(
-                  education.map((entry) =>
-                    entry.id === id
-                      ? { ...entry, name: e.target.value }
-                      : entry,
-                  ),
-                )
-              }
-            />
-          </div>
+    <>
+      <div className="sidebar-section-header">
+        <h2 className="sidebar-section-title">Education</h2>
+        <button type="button" onClick={addEducation}>
+          Add
+        </button>
+      </div>
+      <div>
+        {educations.map(({ id, name, location, degree, years }) => (
+          <div key={id} className="form-entry">
+            <div className="form-field">
+              <label htmlFor="">Institute Name</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) =>
+                  setEducations(
+                    educations.map((entry) =>
+                      entry.id === id
+                        ? { ...entry, name: e.target.value }
+                        : entry,
+                    ),
+                  )
+                }
+              />
+            </div>
 
-          <div className="form-field">
-            <label htmlFor="">Location</label>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) =>
-                setEducation(
-                  education.map((entry) =>
-                    entry.id === id
-                      ? { ...entry, location: e.target.value }
-                      : entry,
-                  ),
-                )
-              }
-            />
-          </div>
+            <div className="form-field">
+              <label htmlFor="">Location</label>
+              <input
+                type="text"
+                value={location}
+                onChange={(e) =>
+                  setEducations(
+                    educations.map((entry) =>
+                      entry.id === id
+                        ? { ...entry, location: e.target.value }
+                        : entry,
+                    ),
+                  )
+                }
+              />
+            </div>
 
-          <div className="form-field">
-            <label htmlFor="">degree</label>
-            <input
-              type="text"
-              value={degree}
-              onChange={(e) =>
-                setEducation(
-                  education.map((entry) =>
-                    entry.id === id
-                      ? { ...entry, degree: e.target.value }
-                      : entry,
-                  ),
-                )
-              }
-            />
-          </div>
+            <div className="form-field">
+              <label htmlFor="">degree</label>
+              <input
+                type="text"
+                value={degree}
+                onChange={(e) =>
+                  setEducations(
+                    educations.map((entry) =>
+                      entry.id === id
+                        ? { ...entry, degree: e.target.value }
+                        : entry,
+                    ),
+                  )
+                }
+              />
+            </div>
 
-          <div className="form-field">
-            <label htmlFor="">Years</label>
-            <input
-              type="text"
-              value={years}
-              onChange={(e) =>
-                setEducation(
-                  education.map((entry) =>
-                    entry.id === id
-                      ? { ...entry, years: e.target.value }
-                      : entry,
-                  ),
-                )
-              }
-            />
+            <div className="form-field">
+              <label htmlFor="">Years</label>
+              <input
+                type="text"
+                value={years}
+                onChange={(e) =>
+                  setEducations(
+                    educations.map((entry) =>
+                      entry.id === id
+                        ? { ...entry, years: e.target.value }
+                        : entry,
+                    ),
+                  )
+                }
+              />
+            </div>
+
+            <button type="button" onClick={() => deleteEducation(id)}>
+              Delete
+            </button>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 

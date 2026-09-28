@@ -11,8 +11,8 @@ function Sidebar({
   setGeneralInfo,
   summary,
   setSummary,
-  education,
-  setEducation,
+  educations,
+  setEducations,
   skills,
   setSkills,
   experiences,
@@ -45,8 +45,7 @@ function Sidebar({
         </div>
 
         <div className="sidebar-section">
-          <h2 className="sidebar-section-title">Education</h2>
-          <EducationForm education={education} setEducation={setEducation} />
+          <EducationForm educations={educations} setEducations={setEducations} />
         </div>
 
         <div className="sidebar-section">

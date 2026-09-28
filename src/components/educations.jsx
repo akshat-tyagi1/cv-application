@@ -1,10 +1,10 @@
-function Education({ education }) {
+function Education({ educations }) {
   return (
     <section className="resume-section">
       <h2>EDUCATION</h2>
 
       <div>
-        {education.map(
+        {educations.map(
           ({ id, name, location, degree, years }) => (
             <article className="entry" key={id}>
               <div className="entry-header">

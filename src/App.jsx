@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GeneralInfo from "./components/genereralInfo";
-import Education from "./components/education";
+import Educations from "./components/educations";
 import Skills from "./components/skills";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
@@ -22,7 +22,7 @@ function App() {
     "Write a short 1-2 line summary about yourself, your interests, and what you're looking for.",
   );
 
-  const [education, setEducation] = useState([
+  const [educations, setEducations] = useState([
     {
       id: crypto.randomUUID(),
       name: "University Name",
@@ -176,8 +176,8 @@ function App() {
         setGeneralInfo={setGeneralInfo}
         summary={summary}
         setSummary={setSummary}
-        education={education}
-        setEducation={setEducation}
+        educations={educations}
+        setEducations={setEducations}
         skills={skills}
         setSkills={setSkills}
         experiences={experiences}
@@ -189,7 +189,7 @@ function App() {
       />
       <GeneralInfo generalInfo={generalInfo} />
       <Summary summary={summary} />
-      <Education education={education} />
+      <Educations educations={educations} />
       <Skills skills={skills} />
       <Experience experiences={experiences} />
       <Projects projects={projects} />
