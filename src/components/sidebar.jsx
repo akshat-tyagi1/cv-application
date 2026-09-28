@@ -45,7 +45,10 @@ function Sidebar({
         </div>
 
         <div className="sidebar-section">
-          <EducationForm educations={educations} setEducations={setEducations} />
+          <EducationForm
+            educations={educations}
+            setEducations={setEducations}
+          />
         </div>
 
         <div className="sidebar-section">
@@ -53,7 +56,6 @@ function Sidebar({
         </div>
 
         <div className="sidebar-section">
-          <h2 className="sidebar-section-title">Experiences</h2>
           <ExperienceForm
             experiences={experiences}
             setExperiences={setExperiences}
