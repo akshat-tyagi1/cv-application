@@ -49,7 +49,6 @@ function Sidebar({
         </div>
 
         <div className="sidebar-section">
-          <h2 className="sidebar-section-title">Skills</h2>
           <SkillsForm skills={skills} setSkills={setSkills} />
         </div>
 
