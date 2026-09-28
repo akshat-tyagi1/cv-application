@@ -1,91 +1,152 @@
 function ProjectsForm({ projects, setProjects }) {
+  const addProject = () => {
+    const newProject = {
+      id: crypto.randomUUID(),
+      title: "Project Title",
+      monthYear: "Month Year",
+      technologies: "Technologies used e.g. JavaScript, HTML, CSS",
+      pointers: [
+        {
+          id: crypto.randomUUID(),
+          text: "Short description or acheivement 1",
+        },
+        {
+          id: crypto.randomUUID(),
+          text: "Short description or acheivement 2",
+        },
+        {
+          id: crypto.randomUUID(),
+          text: "Short description or acheivement 3",
+        },
+      ],
+    };
+
+    setProjects(...projects, newProject);
+  };
+
+  const deleteProject = (projectId) => {
+    setProjects(projects.filter((project) => project.id !== projectId));
+  };
+
+  const deletePointer = (projectId, pointerId) => {
+    const project = projects.find((project) => project.id === projectId);
+
+    const pointers = project.pointers.filter(
+      (pointer) => pointer.id !== pointerId,
+    );
+
+    setProjects(
+      projects.map((project) =>
+        project.id === projectId ? { ...project, pointers: pointers } : project,
+      ),
+    );
+  };
+
   return (
-    <div>
-      {projects.map(
-        ({ id: projectId, title, monthYear, technologies, pointers }) => (
-          <div key={projectId} className="form-entry">
-            <div className="form-field">
-              <label htmlFor="">Projact Name</label>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) =>
-                  setProjects(
-                    projects.map((project) =>
-                      project.id === projectId
-                        ? { ...project, title: e.target.value }
-                        : project,
-                    ),
-                  )
-                }
-              />
-            </div>
+    <>
+      <div className="sidebar-section-header">
+        <h2 className="sidebar-section-title">Projects</h2>
+        <button type="button" onClick={addProject}>
+          Add
+        </button>
+      </div>
+      <div>
+        {projects.map(
+          ({ id: projectId, title, monthYear, technologies, pointers }) => (
+            <div key={projectId} className="form-entry">
+              <div className="form-field">
+                <label htmlFor="">Projact Name</label>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) =>
+                    setProjects(
+                      projects.map((project) =>
+                        project.id === projectId
+                          ? { ...project, title: e.target.value }
+                          : project,
+                      ),
+                    )
+                  }
+                />
+              </div>
 
-            <div className="form-field">
-              <label htmlFor="">Date</label>
-              <input
-                type="text"
-                value={monthYear}
-                onChange={(e) =>
-                  setProjects(
-                    projects.map((project) =>
-                      project.id === projectId
-                        ? { ...project, monthYear: e.target.value }
-                        : project,
-                    ),
-                  )
-                }
-              />
-            </div>
+              <div className="form-field">
+                <label htmlFor="">Date</label>
+                <input
+                  type="text"
+                  value={monthYear}
+                  onChange={(e) =>
+                    setProjects(
+                      projects.map((project) =>
+                        project.id === projectId
+                          ? { ...project, monthYear: e.target.value }
+                          : project,
+                      ),
+                    )
+                  }
+                />
+              </div>
 
-            <div className="form-field">
-              <label htmlFor="">technologies</label>
-              <input
-                type="text"
-                value={technologies}
-                onChange={(e) =>
-                  setProjects(
-                    projects.map((project) =>
-                      project.id === projectId
-                        ? { ...project, technologies: e.target.value }
-                        : project,
-                    ),
-                  )
-                }
-              />
-            </div>
+              <div className="form-field">
+                <label htmlFor="">technologies</label>
+                <input
+                  type="text"
+                  value={technologies}
+                  onChange={(e) =>
+                    setProjects(
+                      projects.map((project) =>
+                        project.id === projectId
+                          ? { ...project, technologies: e.target.value }
+                          : project,
+                      ),
+                    )
+                  }
+                />
+              </div>
 
-            <div>
-              {pointers.map(({ id, text }) => (
-                <div key={id} className="form-field">
-                  <label htmlFor="">Short Description or Achievement</label>
-                  <input
-                    type="text"
-                    value={text}
-                    onChange={(e) =>
-                      setProjects(
-                        projects.map((project) =>
-                          project.id === projectId
-                            ? {
-                                ...project,
-                                pointers: project.pointers.map((pointer) =>
-                                  pointer.id === id
-                                    ? { ...pointer, text: e.target.value }
-                                    : pointer,
-                                ),
-                              }
-                            : project,
-                        ),
-                      )
-                    }
-                  />
-                </div>
-              ))}
+              <div>
+                {pointers.map(({ id, text }) => (
+                  <div key={id} className="form-field">
+                    <label htmlFor="">Short Description or Achievement</label>
+                    <input
+                      type="text"
+                      value={text}
+                      onChange={(e) =>
+                        setProjects(
+                          projects.map((project) =>
+                            project.id === projectId
+                              ? {
+                                  ...project,
+                                  pointers: project.pointers.map((pointer) =>
+                                    pointer.id === id
+                                      ? { ...pointer, text: e.target.value }
+                                      : pointer,
+                                  ),
+                                }
+                              : project,
+                          ),
+                        )
+                      }
+                    />
+                    <button
+                      type="button"
+                      onClick={() => deletePointer(projectId, id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <button type="button" onClick={() => deleteProject(projectId)}>
+                Delete
+              </button>
             </div>
-          </div>
-        ),
-      )}
-    </div>
+          ),
+        )}
+      </div>
+    </>
   );
 }
 

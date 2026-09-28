@@ -63,7 +63,6 @@ function Sidebar({
         </div>
 
         <div className="sidebar-section">
-          <h2 className="sidebar-section-title">Projects</h2>
           <ProjectsForm projects={projects} setProjects={setProjects} />
         </div>
 
