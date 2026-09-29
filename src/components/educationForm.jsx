@@ -4,7 +4,7 @@ function EducationForm({ educations, setEducations }) {
       id: crypto.randomUUID(),
       name: "University Name",
       location: "City, City, Country",
-      degree: "Degree, e.g. B.Tech in Computer Scinece and Engineering",
+      degree: "Degree, e.g. B.Tech in Computer Science and Engineering",
       years: "Start Year - End Year",
     };
 
@@ -27,7 +27,7 @@ function EducationForm({ educations, setEducations }) {
       </div>
       <div>
         {educations.map(({ id, name, location, degree, years }) => (
-          <div key={id} className="form-education">
+          <div key={id} className="form-entry">
             <div className="form-field">
               <label htmlFor="">Institute Name</label>
               <input

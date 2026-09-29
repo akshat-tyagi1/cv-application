@@ -62,15 +62,15 @@ function GeneralInfoForm({ generalInfo, setGeneralInfo }) {
       </div>
 
       <div className="form-field">
-        <label htmlFor="">linkdin</label>
+        <label htmlFor="">linkedin</label>
         <input
           id=""
           type="text"
-          value={generalInfo.linkdin}
+          value={generalInfo.linkedin}
           onChange={(e) =>
             setGeneralInfo({
               ...generalInfo,
-              linkdin: e.target.value,
+              linkedin: e.target.value,
             })
           }
         />

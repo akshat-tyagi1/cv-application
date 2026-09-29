@@ -177,9 +177,7 @@ function ExperienceForm({ experiences, setExperiences }) {
               <div>
                 {pointers.map(({ id, text }, index) => (
                   <div key={id} className="form-field">
-                    <label htmlFor="">
-                      Achivement or Responsibility {index + 1}
-                    </label>
+                    <label htmlFor="">Achivement or Responsibility</label>
                     <input
                       type="text"
                       value={text}

@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 
 function GeneralInfo({ generalInfo }) {
-  const { name, email, contactNumber, location, linkdin, github } =
+  const { name, email, contactNumber, location, linkedin, github } =
     generalInfo;
 
   return (
@@ -18,20 +18,24 @@ function GeneralInfo({ generalInfo }) {
           <FaEnvelope size={16} />
           <span>{email}</span>
         </div>
+        <span>|</span>
         <div>
           <FaPhone size={16} />
           <span>{contactNumber}</span>
         </div>
+        <span>|</span>
         <div>
           <FaMapMarkerAlt size={16} />
           <span>
             {location}
           </span>
         </div>
+        <span>|</span>
         <div>
           <FaLinkedin size={16} />
-          <span>{linkdin}</span>
+          <span>{linkedin}</span>
         </div>
+        <span>|</span>
         <div>
           <FaGithub size={16} />
           <span>{github}</span>

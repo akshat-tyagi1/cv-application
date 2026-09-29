@@ -8,20 +8,20 @@ function ProjectsForm({ projects, setProjects }) {
       pointers: [
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 1",
+          text: "Short description or achievement 1",
         },
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 2",
+          text: "Short description or achievement 2",
         },
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 3",
+          text: "Short description or achievement 3",
         },
       ],
     };
 
-    setProjects(...projects, newProject);
+    setProjects([...projects, newProject]);
   };
 
   const deleteProject = (projectId) => {
@@ -55,7 +55,7 @@ function ProjectsForm({ projects, setProjects }) {
           ({ id: projectId, title, monthYear, technologies, pointers }) => (
             <div key={projectId} className="form-entry">
               <div className="form-field">
-                <label htmlFor="">Projact Name</label>
+                <label htmlFor="">Project Name</label>
                 <input
                   type="text"
                   value={title}

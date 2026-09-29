@@ -1,6 +1,6 @@
 function SummaryForm({ summary, setSummary }) {
   return (
-    <div>
+    <div className="form-field">
       <label htmlFor="">Summary</label>
       <input
         type="text"

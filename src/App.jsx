@@ -14,7 +14,7 @@ function App() {
     email: "your.email@example.com",
     contactNumber: "+XX XXXXX XXXXX",
     location: "Your City, State",
-    linkdin: "linkdin.com/in/yourusername",
+    linkedin: "linkedin.com/in/yourusername",
     github: "github.com/yourusername",
   });
 
@@ -27,7 +27,7 @@ function App() {
       id: crypto.randomUUID(),
       name: "University Name",
       location: "City, City, Country",
-      degree: "Degree, e.g. B.Tech in Computer Scinece and Engineering",
+      degree: "Degree, e.g. B.Tech in Computer Science and Engineering",
       years: "Start Year - End Year",
     },
   ]);
@@ -100,35 +100,15 @@ function App() {
       pointers: [
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 1",
+          text: "Short description or achievement 1",
         },
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 2",
+          text: "Short description or achievement 2",
         },
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 3",
-        },
-      ],
-    },
-    {
-      id: crypto.randomUUID(),
-      title: "Project Title",
-      monthYear: "Month Year",
-      technologies: "Technologies used e.g. JavaScript, HTML, CSS",
-      pointers: [
-        {
-          id: crypto.randomUUID(),
-          text: "Short description or acheivement 1",
-        },
-        {
-          id: crypto.randomUUID(),
-          text: "Short description or acheivement 2",
-        },
-        {
-          id: crypto.randomUUID(),
-          text: "Short description or acheivement 3",
+          text: "Short description or achievement 3",
         },
       ],
     },
@@ -140,15 +120,35 @@ function App() {
       pointers: [
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 1",
+          text: "Short description or achievement 1",
         },
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 2",
+          text: "Short description or achievement 2",
         },
         {
           id: crypto.randomUUID(),
-          text: "Short description or acheivement 3",
+          text: "Short description or achievement 3",
+        },
+      ],
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "Project Title",
+      monthYear: "Month Year",
+      technologies: "Technologies used e.g. JavaScript, HTML, CSS",
+      pointers: [
+        {
+          id: crypto.randomUUID(),
+          text: "Short description or achievement 1",
+        },
+        {
+          id: crypto.randomUUID(),
+          text: "Short description or achievement 2",
+        },
+        {
+          id: crypto.randomUUID(),
+          text: "Short description or achievement 3",
         },
       ],
     },
@@ -165,12 +165,12 @@ function App() {
     },
     {
       id: crypto.randomUUID(),
-      text: "New Achievementc",
+      text: "New Achievement",
     },
   ]);
 
   return (
-    <div>
+    <div className="app-layout">
       <Sidebar
         generalInfo={generalInfo}
         setGeneralInfo={setGeneralInfo}
@@ -187,13 +187,16 @@ function App() {
         achievements={achievements}
         setAchievements={setAchievements}
       />
-      <GeneralInfo generalInfo={generalInfo} />
-      <Summary summary={summary} />
-      <Educations educations={educations} />
-      <Skills skills={skills} />
-      <Experience experiences={experiences} />
-      <Projects projects={projects} />
-      <Achievements achievements={achievements} />
+
+      <div className="resume-preview">
+        <GeneralInfo generalInfo={generalInfo} />
+        <Summary summary={summary} />
+        <Educations educations={educations} />
+        <Skills skills={skills} />
+        <Experience experiences={experiences} />
+        <Projects projects={projects} />
+        <Achievements achievements={achievements} />
+      </div>
     </div>
   );
 }

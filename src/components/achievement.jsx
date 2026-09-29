@@ -1,11 +1,11 @@
 function Achievements({ achievements }) {
     return (
         <section className="resume-section">
-            <h3>ACHIEVEMENTS</h3>
+            <h2>ACHIEVEMENTS</h2>
 
             <ul className="entry-points">
                 {achievements.map(({id, text}) => (
-                    <li key={id}>[{text}]</li>
+                    <li key={id}>{text}</li>
                 ))}
             </ul>
         </section>
