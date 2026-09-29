@@ -89,7 +89,7 @@ function ProjectsForm({ projects, setProjects }) {
               </div>
 
               <div className="form-field">
-                <label htmlFor="">technologies</label>
+                <label htmlFor="">Technologies</label>
                 <input
                   type="text"
                   value={technologies}
@@ -106,9 +106,11 @@ function ProjectsForm({ projects, setProjects }) {
               </div>
 
               <div>
-                {pointers.map(({ id, text }) => (
+                {pointers.map(({ id, text }, index) => (
                   <div key={id} className="form-field">
-                    <label htmlFor="">Short Description or Achievement</label>
+                    <label htmlFor="">
+                      Short Description or Achievement {index + 1}
+                    </label>
                     <input
                       type="text"
                       value={text}

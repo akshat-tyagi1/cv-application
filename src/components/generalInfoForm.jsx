@@ -17,7 +17,7 @@ function GeneralInfoForm({ generalInfo, setGeneralInfo }) {
       </div>
 
       <div className="form-field">
-        <label htmlFor="">Mail</label>
+        <label htmlFor="">Email</label>
         <input
           id=""
           type="text"

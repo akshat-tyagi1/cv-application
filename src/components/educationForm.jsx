@@ -63,7 +63,7 @@ function EducationForm({ educations, setEducations }) {
             </div>
 
             <div className="form-field">
-              <label htmlFor="">degree</label>
+              <label htmlFor="">Degree</label>
               <input
                 type="text"
                 value={degree}

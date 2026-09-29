@@ -54,7 +54,7 @@ function ExperienceForm({ experiences, setExperiences }) {
   return (
     <>
       <div className="sidebar-section-header">
-        <h2 className="sidebar-section-title">Experiences</h2>
+        <h2 className="sidebar-section-title">Experience</h2>
         <button type="button" onClick={addExperience}>
           Add
         </button>
@@ -175,9 +175,9 @@ function ExperienceForm({ experiences, setExperiences }) {
               </div>
 
               <div>
-                {pointers.map(({ id, text }, index) => (
+                {pointers.map(({ id, text }) => (
                   <div key={id} className="form-field">
-                    <label htmlFor="">Achivement or Responsibility</label>
+                    <label htmlFor="">Achievement or Responsibility</label>
                     <input
                       type="text"
                       value={text}
