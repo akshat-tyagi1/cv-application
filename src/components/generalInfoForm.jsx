@@ -62,7 +62,7 @@ function GeneralInfoForm({ generalInfo, setGeneralInfo }) {
       </div>
 
       <div className="form-field">
-        <label htmlFor="">linkedin</label>
+        <label htmlFor="">Linkedin</label>
         <input
           id=""
           type="text"
