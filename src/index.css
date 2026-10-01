@@ -217,8 +217,14 @@ button {
   border-top: 1px solid var(--line);
 }
 
+/* bullet rows have no label above them, so they sit closer together */
+.form-entry > div:not([class]) .form-field {
+  margin-bottom: 8px;
+}
+
 /* ---- Buttons ------------------------------------------------------------ */
-.sidebar-section-header > button {
+.sidebar-section-header > button,
+.pointer-header > button {
   padding: 5px 14px;
   color: var(--accent);
   font-size: 13px;
@@ -231,9 +237,31 @@ button {
     color 0.15s ease;
 }
 
-.sidebar-section-header > button:hover {
+.sidebar-section-header > button:hover,
+.pointer-header > button:hover {
   color: #fff;
   background: var(--accent);
+}
+
+/* Header row for a group of bullet points: name on the left, Add on the right.
+   Slightly smaller than the section-level Add so the hierarchy is clear. */
+.pointer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pointer-header span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pointer-header > button {
+  padding: 3px 11px;
+  font-size: 12.5px;
 }
 
 /* Delete a whole entry: quiet text button, bottom right of the entry */

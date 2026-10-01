@@ -51,6 +51,21 @@ function ExperienceForm({ experiences, setExperiences }) {
     );
   };
 
+  const addPointer = (experienceId) => {
+  const newPointer = {
+    id: crypto.randomUUID(),
+    text: "New achievement or responsibility",
+  };
+
+  setExperiences(
+    experiences.map((experience) =>
+      experience.id === experienceId
+        ? { ...experience, pointers: [...experience.pointers, newPointer] }
+        : experience,
+    ),
+  );
+};
+
   return (
     <>
       <div className="sidebar-section-header">
@@ -175,9 +190,18 @@ function ExperienceForm({ experiences, setExperiences }) {
               </div>
 
               <div>
+                <div className="pointer-header">
+                  <span>Achievements or responsibilities</span>
+                  <button
+                    type="button"
+                    onClick={() => addPointer(experienceId)}
+                  >
+                    Add
+                  </button>
+                </div>
+
                 {pointers.map(({ id, text }) => (
                   <div key={id} className="form-field">
-                    <label htmlFor="">Achievement or Responsibility</label>
                     <input
                       type="text"
                       value={text}

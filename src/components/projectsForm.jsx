@@ -42,6 +42,21 @@ function ProjectsForm({ projects, setProjects }) {
     );
   };
 
+  const addPointer = (projectId) => {
+    const newPointer = {
+      id: crypto.randomUUID(),
+      text: "New Short description or achievement",
+    };
+
+    setProjects(
+      projects.map((project) =>
+        project.id === projectId
+          ? { ...project, pointers: [...project.pointers, newPointer] }
+          : project,
+      ),
+    );
+  };
+
   return (
     <>
       <div className="sidebar-section-header">
@@ -106,11 +121,15 @@ function ProjectsForm({ projects, setProjects }) {
               </div>
 
               <div>
-                {pointers.map(({ id, text }, index) => (
+                <div className="pointer-header">
+                  <span>Short descriptions or achievements</span>
+                  <button type="button" onClick={() => addPointer(projectId)}>
+                    Add
+                  </button>
+                </div>
+             
+                {pointers.map(({ id, text }) => (
                   <div key={id} className="form-field">
-                    <label htmlFor="">
-                      Short Description or Achievement {index + 1}
-                    </label>
                     <input
                       type="text"
                       value={text}
