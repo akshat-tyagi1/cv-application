@@ -7,8 +7,11 @@ import Projects from "./components/projects";
 import Achievements from "./components/achievement";
 import Sidebar from "./components/sidebar";
 import Summary from "./components/summary";
+import Landing from "./components/Landing";
 
 function App() {
+  const [showBuilder, setShowBuilder] = useState(false);
+
   const [generalInfo, setGeneralInfo] = useState({
     name: "Your Name",
     email: "your.email@example.com",
@@ -168,6 +171,10 @@ function App() {
       text: "New Achievement",
     },
   ]);
+
+  if (!showBuilder) {
+    return <Landing onStart={() => setShowBuilder(true)} />;
+  }
 
   return (
     <div className="app-layout">

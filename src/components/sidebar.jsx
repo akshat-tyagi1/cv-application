@@ -26,6 +26,8 @@ function Sidebar({
     <div className="sidebar">
       <h2>Edit Your Resume</h2>
 
+      <button type="button" onClick={() => window.print()}>Download</button>
+
       <form
         action=""
         className="sidebar-form"
