@@ -8,6 +8,7 @@ import Achievements from "./components/achievement";
 import Sidebar from "./components/sidebar";
 import Summary from "./components/summary";
 import Landing from "./components/Landing";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [showBuilder, setShowBuilder] = useState(false);
@@ -204,6 +205,7 @@ function App() {
         <Projects projects={projects} />
         <Achievements achievements={achievements} />
       </div>
+      <Analytics />
     </div>
   );
 }
